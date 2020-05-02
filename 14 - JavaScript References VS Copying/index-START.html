@@ -13,10 +13,16 @@
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     // and we want to make a copy of it.
+    const team = players;
+
+    console.log(team)
 
     // You might think we can just do something like this:
 
     // however what happens when we update that array?
+    team[3] = 'Lux'
+
+    console.log(players)
 
     // now here is the problem!
 
@@ -25,6 +31,10 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
+
+    const team2 = players.slice();
+
+    team2[3] = 'Test';
 
     // one way
 
@@ -45,6 +55,10 @@
     // and think we make a copy:
 
     // how do we take a copy instead?
+    const cap = Object.assign({}, person, {number: 99 });
+
+    console.log(person);
+    console.log(cap)
 
     // We will hopefully soon see the object ...spread
 
